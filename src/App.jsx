@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
-import MarketOverview from './components/MarketOverview';
 import AdvancedChart from './components/AdvancedChart';
-import IndiaStockScreener from './components/IndiaStockScreener';
-import MutualFundsScreener from './components/MutualFundsScreener';
+import IndiaSectorHeatmap from './components/IndiaSectorHeatmap';
+import SectorLeaders from './components/SectorLeaders';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -19,13 +18,12 @@ export default function App() {
             <AdvancedChart symbol={symbol} />
           </div>
           <div className="lg:col-span-2 order-2">
-            <MarketOverview />
+            <IndiaSectorHeatmap />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <IndiaStockScreener />
-          <MutualFundsScreener />
+        <div className="grid grid-cols-1">
+          <SectorLeaders />
         </div>
       </main>
 

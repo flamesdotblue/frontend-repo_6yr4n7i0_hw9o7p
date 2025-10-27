@@ -2,11 +2,18 @@ import React, { useState } from 'react';
 import { LineChart, BarChart3, Search } from 'lucide-react';
 
 export default function Header({ onSearch }) {
-  const [query, setQuery] = useState('NASDAQ:AAPL');
+  const [query, setQuery] = useState('NSE:NIFTY');
+
+  const normalize = (q) => {
+    const t = q.trim().toUpperCase();
+    if (t.startsWith('NSE:') || t.startsWith('BSE:')) return t;
+    // Default to NSE if no exchange prefix supplied
+    return `NSE:${t}`;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (query.trim()) onSearch(query.trim().toUpperCase());
+    if (query.trim()) onSearch(normalize(query));
   };
 
   return (
@@ -17,8 +24,8 @@ export default function Header({ onSearch }) {
             <LineChart className="h-5 w-5" />
           </div>
           <div>
-            <div className="font-semibold leading-tight">Market Fusion</div>
-            <div className="text-xs text-gray-500">Trading charts + sector insights</div>
+            <div className="font-semibold leading-tight">Market Fusion India</div>
+            <div className="text-xs text-gray-500">NSE/BSE stocks + mutual funds</div>
           </div>
         </div>
         <form onSubmit={handleSubmit} className="flex items-center gap-2 w-full max-w-md">
@@ -28,7 +35,7 @@ export default function Header({ onSearch }) {
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="e.g. NSE:NIFTY, NASDAQ:AAPL, NYSE:TSLA"
+              placeholder="e.g. NSE:RELIANCE, BSE:500325, NSE:TCS"
               className="w-full pl-9 pr-3 py-2 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"
             />
           </div>

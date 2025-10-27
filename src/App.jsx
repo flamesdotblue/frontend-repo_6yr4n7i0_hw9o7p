@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
-import SectorHeatmap from './components/SectorHeatmap';
 import MarketOverview from './components/MarketOverview';
 import AdvancedChart from './components/AdvancedChart';
+import IndiaStockScreener from './components/IndiaStockScreener';
+import MutualFundsScreener from './components/MutualFundsScreener';
 import Footer from './components/Footer';
 
 export default function App() {
-  const [symbol, setSymbol] = useState('NASDAQ:AAPL');
+  const [symbol, setSymbol] = useState('NSE:NIFTY');
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-900">
@@ -22,7 +23,10 @@ export default function App() {
           </div>
         </div>
 
-        <SectorHeatmap />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <IndiaStockScreener />
+          <MutualFundsScreener />
+        </div>
       </main>
 
       <Footer />

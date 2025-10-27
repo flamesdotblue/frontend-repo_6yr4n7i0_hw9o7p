@@ -30,37 +30,33 @@ export default function MarketOverview() {
       showSymbolLogo: true,
       tabs: [
         {
-          title: 'US Indices',
-          symbols: [
-            { s: 'FOREXCOM:SPXUSD', d: 'S&P 500' },
-            { s: 'NASDAQ:NDX', d: 'Nasdaq 100' },
-            { s: 'OANDA:US30USD', d: 'Dow 30' },
-            { s: 'CME_MINI:ES1!', d: 'S&P Futures' },
-            { s: 'NASDAQ:QQQ', d: 'QQQ' },
-          ],
-        },
-        {
-          title: 'Sectors',
-          symbols: [
-            { s: 'AMEX:XLC', d: 'Communication' },
-            { s: 'AMEX:XLY', d: 'Consumer Disc.' },
-            { s: 'AMEX:XLP', d: 'Consumer Staples' },
-            { s: 'AMEX:XLE', d: 'Energy' },
-            { s: 'AMEX:XLF', d: 'Financials' },
-            { s: 'AMEX:XLV', d: 'Healthcare' },
-            { s: 'AMEX:XLI', d: 'Industrials' },
-            { s: 'AMEX:XLK', d: 'Technology' },
-            { s: 'AMEX:XLU', d: 'Utilities' },
-            { s: 'AMEX:XLB', d: 'Materials' },
-            { s: 'AMEX:XLRE', d: 'Real Estate' },
-          ],
-        },
-        {
-          title: 'India Benchmarks',
+          title: 'NSE Indices',
           symbols: [
             { s: 'NSE:NIFTY', d: 'NIFTY 50' },
-            { s: 'NSE:BANKNIFTY', d: 'Bank NIFTY' },
+            { s: 'NSE:BANKNIFTY', d: 'BANK NIFTY' },
+            { s: 'NSE:FINNIFTY', d: 'FINNIFTY' },
+            { s: 'NSE:MIDCPNIFTY', d: 'MIDCAP NIFTY' },
+          ],
+        },
+        {
+          title: 'BSE Indices',
+          symbols: [
             { s: 'BSE:SENSEX', d: 'SENSEX' },
+            { s: 'BSE:BANKEX', d: 'BANKEX' },
+            { s: 'BSE:SMEIPO', d: 'BSE SME IPO' },
+          ],
+        },
+        {
+          title: 'Sectoral (NSE)',
+          symbols: [
+            { s: 'NSE:NIFTYIT', d: 'NIFTY IT' },
+            { s: 'NSE:NIFTYFMCG', d: 'NIFTY FMCG' },
+            { s: 'NSE:NIFTYPHARM', d: 'NIFTY PHARMA' },
+            { s: 'NSE:NIFTYMETAL', d: 'NIFTY METAL' },
+            { s: 'NSE:NIFTYENERGY', d: 'NIFTY ENERGY' },
+            { s: 'NSE:NIFTYREALTY', d: 'NIFTY REALTY' },
+            { s: 'NSE:NIFTYAUTO', d: 'NIFTY AUTO' },
+            { s: 'NSE:NIFTYFINSER', d: 'NIFTY FIN SERV' },
           ],
         },
       ],
@@ -78,8 +74,8 @@ export default function MarketOverview() {
     <section className="w-full bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
       <div className="px-4 py-3 border-b border-gray-200 flex items-center justify-between">
         <div>
-          <h2 className="text-base font-semibold text-gray-900">Market Overview</h2>
-          <p className="text-xs text-gray-500">Live performance across indices and sectors</p>
+          <h2 className="text-base font-semibold text-gray-900">India Market Overview</h2>
+          <p className="text-xs text-gray-500">Live NSE and BSE indices and sectoral performance</p>
         </div>
       </div>
       <div ref={containerRef} className="p-2" />

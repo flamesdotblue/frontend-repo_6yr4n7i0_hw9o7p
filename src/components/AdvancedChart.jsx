@@ -31,9 +31,9 @@ export default function AdvancedChart({ symbol }) {
         // eslint-disable-next-line no-new
         new window.TradingView.widget({
           autosize: true,
-          symbol: symbol || 'NASDAQ:AAPL',
+          symbol: symbol || 'NSE:NIFTY',
           interval: '60',
-          timezone: 'Etc/UTC',
+          timezone: 'Asia/Kolkata',
           theme: 'light',
           style: '1',
           locale: 'en',
@@ -58,8 +58,8 @@ export default function AdvancedChart({ symbol }) {
   return (
     <section className="w-full bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
       <div className="px-4 py-3 border-b border-gray-200">
-        <h2 className="text-base font-semibold text-gray-900">Advanced Chart</h2>
-        <p className="text-xs text-gray-500">Interactive TradingView chart with indicators and timeframes</p>
+        <h2 className="text-base font-semibold text-gray-900">Advanced Chart (India)</h2>
+        <p className="text-xs text-gray-500">Interactive chart for NSE/BSE symbols and indices</p>
       </div>
       <div ref={containerRef} className="p-2" />
     </section>
